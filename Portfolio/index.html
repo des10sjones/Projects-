@@ -5,101 +5,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Destin Jones</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="index.js"></script>
+    <script src="index.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Destin Jones</h1>
-        <button class="menu-toggle" aria-label="Toggle menu">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </button>
-        <nav>
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>Destin Jones</h1>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
         <section id="about">
-            <h2>About Me</h2>
-            <p>
-                I grew up in Calera, Alabama, and graduated from UAB with a major in Computer Science and a minor in Sports and Entertainment Marketing. Currently, I work in an IT/Analyst support role at BTC Wholesale Distributors.
+            <div class="container">
+                <h2>About Me</h2>
+                <p>
+                    I grew up in Calera, Alabama, and graduated from UAB with a major in Computer Science and a minor in Sports and Entertainment Marketing. Currently, I work in an IT/Analyst support role at BTC Wholesale Distributors.
 
-                In addition to my professional career, I co-host The Run-Down Podcast with three partners, where we discuss sports and pop culture. My passions for basketball and YouTube are key drivers of my career aspirations.
-                
-                My long-term goal is to establish my own sports media company and an international sports media agency.
-            </p>
+                    In addition to my professional career, I co-host The Run-Down Podcast with three partners, where we discuss sports and pop culture. My passions for basketball and YouTube are key drivers of my career aspirations.
+                    
+                    My long-term goal is to establish my own sports media company and an international sports media agency.
+                </p>
+            </div>
         </section>
 
         <section id="skills">
-            <h2>Skills</h2>
-            <h3>Programming Languages</h3>
-            <ul>
-                <li>Java</li>
-                <li>C</li>
-                <li>Python</li>
-            </ul>
-
-            <h3>Web Development</h3>
-            <ul>
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>JavaScript</li>
-            </ul>
-
-            <h3>Other Skills</h3>
-            <ul>
-                <li>Teamwork</li>
-                <li>Problem Solving</li>
-                <li>Time Management</li>
-            </ul>
+            <div class="container">
+                <h2>Skills</h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3>Programming Languages</h3>
+                        <ul>
+                            <li>Java</li>
+                            <li>C</li>
+                            <li>Python</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Web Development</h3>
+                        <ul>
+                            <li>HTML5</li>
+                            <li>CSS3</li>
+                            <li>JavaScript</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Other Skills</h3>
+                        <ul>
+                            <li>Teamwork</li>
+                            <li>Problem Solving</li>
+                            <li>Time Management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="projects">
-            <h2>Projects</h2>
-            <div class="project">
-                <h3>Project 1</h3>
-                <p>Description of Project 1.</p>
-                <a href="https://github.com/yourusername/project1" target="_blank">View Project 1</a>
-            </div>
-            <div class="project">
-                <h3>Project 2</h3>
-                <p>Description of Project 2.</p>
-                <a href="https://github.com/yourusername/project2" target="_blank">View Project 2</a>
+            <div class="container">
+                <h2>Projects</h2>
+                <div class="projects-container">
+                    <div class="project">
+                        <h3>Project 1</h3>
+                        <p>Description of Project 1.</p>
+                        <a href="https://github.com/yourusername/project1" target="_blank">View Project 1</a>
+                    </div>
+                    <div class="project">
+                        <h3>Project 2</h3>
+                        <p>Description of Project 2.</p>
+                        <a href="https://github.com/yourusername/project2" target="_blank">View Project 2</a>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="contact">
-            <h2>Contact</h2>
-            <form>
-                <div>
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div>
-                    <input type="submit" value="Submit">
-                </div>
-            </form>
+            <div class="container">
+                <h2>Contact</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
         </section>
     </main>
 
     <footer>
-        <h2>Contact Information</h2>
-        <ul>
-            <li>Number: (205)-365-2393</li>
-            <li>Email: <a href="mailto:dsjones3@uab.edu">dsjones3@uab.edu</a></li>
-        </ul>
-        <p>Copyright © 2023 Destin Jones</p>
+        <div class="container">
+            <h2>Contact Information</h2>
+            <ul>
+                <li>Number: (205)-365-2393</li>
+                <li>Email: <a href="mailto:dsjones3@uab.edu">dsjones3@uab.edu</a></li>
+            </ul>
+            <p>Copyright © 2023 Destin Jones</p>
+        </div>
     </footer>
 </body>
 </html>
