@@ -73,14 +73,12 @@ section {
     margin-bottom: 20px;
     border-radius: 8px;
     background-color: #000;
-    border: 2px solid #3498db;
-    transition: all 4s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 section:hover {
     background-color: #3498db;
     color: #000;
-    border-color: #000;
 }
 
 .skills-container, .projects-container, .experience-entry, .education-entry {
@@ -121,7 +119,6 @@ section:hover {
     bottom: 20px;
     right: 20px;
     background-color: #34495e;
-    border: 2px solid #2980b9;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -234,23 +231,5 @@ footer a:hover {
 
     footer {
         font-size: 14px;
-    }
-}
-
-@keyframes flipColors {
-    0% {
-        background-color: #000;
-        color: #d3d3d3;
-        border-color: #3498db;
-    }
-    50% {
-        background-color: #3498db;
-        color: #000;
-        border-color: #000;
-    }
-    100% {
-        background-color: #000;
-        color: #d3d3d3;
-        border-color: #3498db;
     }
 }
