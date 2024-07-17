@@ -72,13 +72,15 @@ section {
     padding: 40px 20px;
     margin-bottom: 20px;
     border-radius: 8px;
-    background-color: #2c3e50;
+    background-color: #000;
     border: 2px solid #3498db;
     transition: all 4s ease-in-out;
 }
 
 section:hover {
-    animation: flipColors 4s infinite;
+    background-color: #3498db;
+    color: #000;
+    border-color: #000;
 }
 
 .skills-container, .projects-container, .experience-entry, .education-entry {
@@ -237,15 +239,18 @@ footer a:hover {
 
 @keyframes flipColors {
     0% {
-        background-color: #2c3e50;
+        background-color: #000;
+        color: #d3d3d3;
         border-color: #3498db;
     }
     50% {
         background-color: #3498db;
-        border-color: #2c3e50;
+        color: #000;
+        border-color: #000;
     }
     100% {
-        background-color: #2c3e50;
+        background-color: #000;
+        color: #d3d3d3;
         border-color: #3498db;
     }
 }

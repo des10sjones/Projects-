@@ -1,20 +1,34 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navUl = document.querySelector('nav ul');
+document.addEventListener('DOMContentLoaded', (event) => {
+    const contactBox = document.getElementById('contact-box');
 
-    menuToggle.addEventListener('click', function() {
-        navUl.classList.toggle('active');
-    });
+    contactBox.onmousedown = function(event) {
+        let shiftX = event.clientX - contactBox.getBoundingClientRect().left;
+        let shiftY = event.clientY - contactBox.getBoundingClientRect().top;
 
-    // Smooth scroll for navigation links
-    document.querySelectorAll('nav ul li a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            document.getElementById(targetId).scrollIntoView({
-                behavior: 'smooth'
-            });
-            navUl.classList.remove('active'); // Close the menu on link click
-        });
-    });
+        contactBox.style.position = 'absolute';
+        contactBox.style.zIndex = 1000;
+        document.body.append(contactBox);
+
+        moveAt(event.pageX, event.pageY);
+
+        function moveAt(pageX, pageY) {
+            contactBox.style.left = pageX - shiftX + 'px';
+            contactBox.style.top = pageY - shiftY + 'px';
+        }
+
+        function onMouseMove(event) {
+            moveAt(event.pageX, event.pageY);
+        }
+
+        document.addEventListener('mousemove', onMouseMove);
+
+        contactBox.onmouseup = function() {
+            document.removeEventListener('mousemove', onMouseMove);
+            contactBox.onmouseup = null;
+        };
+    };
+
+    contactBox.ondragstart = function() {
+        return false;
+    };
 });
