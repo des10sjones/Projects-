@@ -3,25 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors Game</title>
+    <title>Game Hub</title>
     <link rel="stylesheet" href="RPS.css">
 </head>
 <body>
     <header>
-        <h1>Rock Paper Scissors Game</h1>
+        <h1>Game Hub</h1>
     </header>
     <main>
-        <section aria-labelledby="game-buttons">
-            <h2 id="game-buttons" class="visually-hidden">Game Choices</h2>
+        <!-- Rock Paper Scissors Game -->
+        <section aria-labelledby="rps-game">
+            <h2 id="rps-game">Rock Paper Scissors Game</h2>
             <button class="button button1" aria-label="Choose Rock">Rock</button>
             <button class="button button2" aria-label="Choose Paper">Paper</button>
             <button class="button button3" aria-label="Choose Scissors">Scissors</button>
+            <div id="playerMode">
+                <button class="modeButton" onclick="setPlayerMode('computer')">Play vs Computer</button>
+                <button class="modeButton" onclick="setPlayerMode('player')">Play vs Player</button>
+            </div>
+            <div id="rps-resultContainer">
+                <h3>Game Results</h3>
+                <p id="user1Pick" aria-live="polite"></p>
+                <p id="user2Pick" aria-live="polite"></p>
+                <p id="resultText" aria-live="polite"></p>
+            </div>
         </section>
-        <section id="resultContainer" aria-live="polite">
-            <h2>Game Results</h2>
-            <p id="userPick" aria-live="polite"></p>
-            <p id="computerPick" aria-live="polite"></p>
-            <p id="resultText" aria-live="polite"></p>
+
+        <!-- Tic Tac Toe Game -->
+        <section aria-labelledby="ttt-game">
+            <h2 id="ttt-game">Tic Tac Toe Game</h2>
+            <div id="ttt-board">
+                <div class="ttt-cell" data-index="0"></div>
+                <div class="ttt-cell" data-index="1"></div>
+                <div class="ttt-cell" data-index="2"></div>
+                <div class="ttt-cell" data-index="3"></div>
+                <div class="ttt-cell" data-index="4"></div>
+                <div class="ttt-cell" data-index="5"></div>
+                <div class="ttt-cell" data-index="6"></div>
+                <div class="ttt-cell" data-index="7"></div>
+                <div class="ttt-cell" data-index="8"></div>
+            </div>
+            <div id="ttt-controls">
+                <button class="modeButton" onclick="setTicTacToeMode('computer')">Play vs Computer</button>
+                <button class="modeButton" onclick="setTicTacToeMode('player')">Play vs Player</button>
+                <button class="modeButton" onclick="resetTicTacToe()">Reset</button>
+            </div>
+            <div id="ttt-resultContainer">
+                <h3>Game Results</h3>
+                <p id="ttt-resultText" aria-live="polite"></p>
+            </div>
         </section>
     </main>
     <script src="RPS.js" defer></script>

@@ -21,11 +21,11 @@ main {
 }
 
 section {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 /* Button Styles */
-.button {
+.button, .modeButton {
     font-size: 18px;
     padding: 10px 20px;
     margin: 10px;
@@ -71,7 +71,7 @@ section {
 }
 
 /* Results Container */
-#resultContainer {
+#rps-resultContainer, #ttt-resultContainer {
     background-color: #333;
     padding: 20px;
     border-radius: 10px;
@@ -79,7 +79,7 @@ section {
     max-width: 600px;
 }
 
-#resultContainer h2 {
+#rps-resultContainer h3, #ttt-resultContainer h3 {
     margin-top: 0;
 }
 
@@ -92,4 +92,34 @@ section {
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     border: 0;
+}
+
+/* Tic Tac Toe Styles */
+#ttt-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+}
+
+.ttt-cell {
+    background-color: #fff;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    border: 2px solid #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.ttt-cell:hover {
+    background-color: #ccc;
+    color: #000;
+    transform: scale(1.05);
+}
+
+#ttt-controls {
+    margin-top: 20px;
 }
