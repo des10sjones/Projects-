@@ -7,6 +7,11 @@ body {
     font-weight: bolder;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
 header {
@@ -22,6 +27,7 @@ main {
 
 section {
     margin-bottom: 40px;
+    text-align: center;
 }
 
 /* Button Styles */
@@ -77,6 +83,7 @@ section {
     border-radius: 10px;
     width: 80%;
     max-width: 600px;
+    text-align: center;
 }
 
 #rps-resultContainer h3, #ttt-resultContainer h3 {
@@ -100,6 +107,7 @@ section {
     grid-template-columns: repeat(3, 100px);
     grid-template-rows: repeat(3, 100px);
     gap: 5px;
+    justify-content: center;
 }
 
 .ttt-cell {
@@ -122,4 +130,5 @@ section {
 
 #ttt-controls {
     margin-top: 20px;
+    text-align: center;
 }
