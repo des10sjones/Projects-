@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -99,17 +100,18 @@ section#skills {
     color: #3498db;
 }
 
-section#projects {
+section#projects, section#experience, section#education {
     background-color: #2c3e50;
 }
 
-.projects-container {
+.projects-container, .experience-entry, .education-entry {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.project {
+.project, .experience-entry, .education-entry {
     flex: 1;
     margin: 10px;
     padding: 20px;
@@ -120,7 +122,7 @@ section#projects {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.project:hover {
+.project:hover, .experience-entry:hover, .education-entry:hover {
     transform: scale(1.05);
 }
 
