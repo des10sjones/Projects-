@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel = "stylesheet" 
-        href="styles.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors Game</title>
-    
+    <link rel="stylesheet" href="RPS.css">
 </head>
 <body>
-    <h1>Rock Paper Scissors Game</h1>
-    <button class="button button1">Rock</button>
-    <button class="button button2">Paper</button>
-    <button class="button button3">Scissors</button>
-
-    <div id="resultContainer">
-        <h2>Game Results</h2>
-        <p id="userPick"></p>
-        <p id="computerPick"></p>
-        <p id="resultText"></p>
-    </div>
-
-
-
-    <script src="RPS.js"></script>
+    <header>
+        <h1>Rock Paper Scissors Game</h1>
+    </header>
+    <main>
+        <section aria-labelledby="game-buttons">
+            <h2 id="game-buttons" class="visually-hidden">Game Choices</h2>
+            <button class="button button1" aria-label="Choose Rock">Rock</button>
+            <button class="button button2" aria-label="Choose Paper">Paper</button>
+            <button class="button button3" aria-label="Choose Scissors">Scissors</button>
+        </section>
+        <section id="resultContainer" aria-live="polite">
+            <h2>Game Results</h2>
+            <p id="userPick" aria-live="polite"></p>
+            <p id="computerPick" aria-live="polite"></p>
+            <p id="resultText" aria-live="polite"></p>
+        </section>
+    </main>
+    <script src="RPS.js" defer></script>
 </body>
 </html>
