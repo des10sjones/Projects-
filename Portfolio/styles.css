@@ -72,37 +72,8 @@ section {
     padding: 40px 20px;
     margin-bottom: 20px;
     border-radius: 8px;
-}
-
-section#about {
     background-color: #2c3e50;
     border: 2px solid #3498db;
-    animation: fadeIn 1s ease-in-out;
-}
-
-section#education {
-    background-color: #34495e;
-    border: 2px solid #e74c3c;
-}
-
-section#experience {
-    background-color: #2c3e50;
-    border: 2px solid #2ecc71;
-}
-
-section#skills {
-    background-color: #34495e;
-    border: 2px solid #f1c40f;
-}
-
-section#projects {
-    background-color: #2c3e50;
-    border: 2px solid #9b59b6;
-}
-
-section#contact {
-    background-color: #34495e;
-    border: 2px solid #2980b9;
 }
 
 .skills-container, .projects-container, .experience-entry, .education-entry {
@@ -137,22 +108,41 @@ section#contact {
     color: #1abc9c;
 }
 
-form {
-    max-width: 600px;
-    margin: auto;
+/* Contact Box Styles */
+#contact-box {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #34495e;
+    border: 2px solid #2980b9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    cursor: move;
 }
 
-.form-group {
-    margin-bottom: 20px;
+#contact-box h2 {
+    margin-top: 0;
+    color: #3498db;
 }
 
-form label {
+#contact-box form {
+    margin: 0;
+}
+
+#contact-box .form-group {
+    margin-bottom: 10px;
+}
+
+#contact-box form label {
     display: block;
     margin-bottom: 5px;
     color: #3498db;
 }
 
-form input[type="text"], form input[type="email"] {
+#contact-box form input[type="text"], 
+#contact-box form input[type="email"] {
     width: calc(100% - 20px);
     padding: 10px;
     box-sizing: border-box;
@@ -162,7 +152,7 @@ form input[type="text"], form input[type="email"] {
     border-radius: 4px;
 }
 
-form input[type="submit"] {
+#contact-box form input[type="submit"] {
     background-color: #2980b9;
     color: #fff;
     padding: 10px 20px;
@@ -172,7 +162,7 @@ form input[type="submit"] {
     border-radius: 4px;
 }
 
-form input[type="submit"]:hover {
+#contact-box form input[type="submit"]:hover {
     background-color: #3498db;
 }
 
