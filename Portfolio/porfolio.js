@@ -1,7 +1,9 @@
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', () => {
     const contactBox = document.getElementById('contact-box');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav ul');
 
-    contactBox.onmousedown = function(event) {
+    contactBox.onmousedown = (event) => {
         let shiftX = event.clientX - contactBox.getBoundingClientRect().left;
         let shiftY = event.clientY - contactBox.getBoundingClientRect().top;
 
@@ -22,13 +24,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         document.addEventListener('mousemove', onMouseMove);
 
-        contactBox.onmouseup = function() {
+        contactBox.onmouseup = () => {
             document.removeEventListener('mousemove', onMouseMove);
             contactBox.onmouseup = null;
         };
     };
 
-    contactBox.ondragstart = function() {
-        return false;
-    };
+    contactBox.ondragstart = () => false;
+
+    menuToggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+    });
 });
+
