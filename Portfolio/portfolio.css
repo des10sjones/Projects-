@@ -29,7 +29,7 @@ header {
 }
 
 .menu-toggle {
-    display: none; 
+    display: none;
     flex-direction: column;
     cursor: pointer;
 }
@@ -81,14 +81,13 @@ section:hover {
     color: #000;
 }
 
-.skills-container, .projects-container, .experience-entry, .education-entry {
+.card-grid {
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.skill-category, .project, .experience-entry, .education-entry {
+.card {
     flex: 1;
     margin: 10px;
     padding: 20px;
@@ -99,7 +98,7 @@ section:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.skill-category:hover, .project:hover, .experience-entry:hover, .education-entry:hover {
+.card:hover {
     transform: scale(1.05);
 }
 
@@ -111,6 +110,19 @@ section:hover {
 
 .project a:hover {
     color: #1abc9c;
+}
+
+/* Profile Picture Styles */
+.profile-pic-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 /* Contact Box Styles */
