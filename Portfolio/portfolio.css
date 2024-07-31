@@ -62,8 +62,30 @@ nav ul li a:hover {
     color: #3498db;
 }
 
+.content-wrapper {
+    display: flex;
+    flex: 1;
+}
+
+aside#skills {
+    width: 250px;
+    background-color: #2c3e50;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+}
+
+aside#skills h2, aside#skills .card {
+    color: #fff;
+}
+
 main {
     flex: 1;
+    margin-left: 270px; /* Adjust margin to accommodate sidebar width */
+    padding: 20px;
     display: flex;
     flex-direction: column;
 }
@@ -74,6 +96,7 @@ section {
     border-radius: 8px;
     background-color: #000;
     transition: all 0.5s ease-in-out;
+    animation: fadeIn 1s ease-in;
 }
 
 section:hover {
@@ -96,6 +119,7 @@ section:hover {
     border-radius: 8px;
     transition: transform 0.3s ease-in-out;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1s ease-in;
 }
 
 .card:hover {
@@ -230,6 +254,16 @@ footer a:hover {
     nav li {
         margin: 10px 0;
     }
+
+    aside#skills {
+        position: static;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    main {
+        margin-left: 0;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -243,5 +277,15 @@ footer a:hover {
 
     footer {
         font-size: 14px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
