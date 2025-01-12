@@ -4,8 +4,32 @@ const tableBody = document.querySelector('#entries-table tbody');
 const barChartCanvas = document.getElementById('bar-chart');
 const pieChartCanvas = document.getElementById('pie-chart');
 
+// Theme Toggle Button
+const themeToggle = document.getElementById('theme-toggle');
+
+// Sidebar navigation links
+const links = document.querySelectorAll('.nav-links a');
+const pages = document.querySelectorAll('.page');
+
+
 // Entries Array (Persistent via localStorage)
 let entries = JSON.parse(localStorage.getItem('entries')) || [];
+
+// Add click event listeners to each link
+links.forEach(link => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    const targetId = link.getAttribute('href').replace('#', '');
+
+    // Hide all pages and remove active class from links
+    pages.forEach(page => page.classList.remove('active'));
+    links.forEach(l => l.classList.remove('active'));
+
+    // Show the selected page and mark link as active
+    document.getElementById(targetId).classList.add('active');
+    link.classList.add('active');
+  });
+});
 
 // Event: Form Submission
 form.addEventListener('submit', (event) => {
@@ -28,6 +52,26 @@ form.addEventListener('submit', (event) => {
     alert("Please fill out all fields with valid data.");
   }
 });
+
+// Add event listener for theme toggle
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark-theme');
+
+  // Save the user's theme preference to localStorage
+  if (document.body.classList.contains('dark-theme')) {
+      localStorage.setItem('theme', 'dark');
+  } else {
+      localStorage.setItem('theme', 'light');
+  }
+});
+
+// Apply the saved theme on page load
+document.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+      document.body.classList.add('dark-theme');
+  }
+})
 
 // Function: Add Entry to Table
 function addEntryToTable(entry) {

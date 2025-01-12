@@ -8,60 +8,110 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container mt-5">
-    <h1 class="text-center mb-4">Personal Finance Tracker</h1>
-    <!-- Form Section -->
-    <form id="finance-form" class="row g-3">
-      <div class="col-md-4">
-        <input type="date" id="date" class="form-control" required>
-      </div>
-      <div class="col-md-4">
-        <input type="text" id="category" class="form-control" placeholder="Category" required>
-      </div>
-      <div class="col-md-2">
-        <select id="type" class="form-select">
-          <option value="Expense">Expense</option>
-          <option value="Income">Income</option>
-        </select>
-      </div>
-      <div class="col-md-2">
-        <input type="number" id="amount" class="form-control" placeholder="Amount" required>
-      </div>
-      <div class="col-12">
-        <button type="submit" class="btn btn-primary w-100">Add Entry</button>
-      </div>
-    </form>
+  <body>
+    <div class="main-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="profile">
+          <img src="profile-placeholder.jpg" alt="Profile Picture" class="profile-pic">
+          <h3>Welcome, User!</h3>
+        </div>
+        <nav class="nav-links">
+          <a href="#dashboard" id="dashboard-link">Dashboard</a>
+          <a href="#settings" id="settings-link">Settings</a>
+          <a href="#reports" id="reports-link">Reports</a>
+          <a href="#logout">Logout</a>
+        </nav>
+      </aside>
+  
+      <!-- Main Content -->
+      <div class="content">
+        <!-- Dashboard Page -->
+        <div id="dashboard" class="page active">
+          <h1>Dashboard</h1>
+          <p>Welcome to your dashboard! Track and manage your financial entries below.</p>
+  
+          <!-- Financial Form -->
+          <form id="finance-form" class="row g-3">
+            <div class="col-md-4">
+              <input type="date" id="date" class="form-control" required>
+            </div>
+            <div class="col-md-4">
+              <input type="text" id="category" class="form-control" placeholder="Category" required>
+            </div>
+            <div class="col-md-2">
+              <select id="type" class="form-select">
+                <option value="Expense">Expense</option>
+                <option value="Income">Income</option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <input type="number" id="amount" class="form-control" placeholder="Amount" required>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary w-100">Add Entry</button>
+            </div>
+          </form>
+  
+          <!-- Entries Table -->
+          <div id="table-container" class="mt-4">
+            <h2>Entries</h2>
+            <table id="entries-table" class="table table-bordered">
+              <thead class="table-light">
+                <tr>
+                  <th>Date</th>
+                  <th>Category</th>
+                  <th>Type</th>
+                  <th>Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Entries will be dynamically added here -->
+              </tbody>
+            </table>
+          </div>
+  
+          <!-- Buttons Section -->
+          <div class="mt-4 text-center">
+            <button id="view-summary" class="btn btn-secondary">View Summary</button>
+            <button id="visualize-data" class="btn btn-success">Visualize Data</button>
+          </div>
+  
+          <!-- Charts Section -->
+          <canvas id="chart" width="400" height="200" style="display: none;" class="mt-4"></canvas>
+          <canvas id="pie-chart" width="400" height="200" style="display: none;" class="mt-4"></canvas>
+        </div>
+  
+        <!-- Settings Page -->
+        <div id="settings" class="page">
+          <h1>Settings</h1>
+          <form class="settings-form">
+            <label for="profile-pic">Change Profile Picture:</label>
+            <input type="file" id="profile-pic" name="profile-pic">
+            
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter your username">
+  
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email">
 
-    <!-- Table Section -->
-    <div id="table-container" class="mt-4">
-      <h2>Entries</h2>
-      <table id="entries-table" class="table table-bordered">
-        <thead class="table-light">
-          <tr>
-            <th>Date</th>
-            <th>Category</th>
-            <th>Type</th>
-            <th>Amount</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Entries will be dynamically added here -->
-        </tbody>
-      </table>
+            <button id="theme-toggle" class="btn btn-secondary">Toggle Theme</button>
+
+  
+            <button type="submit" class="btn btn-primary">Save Settings</button>
+          </form>
+        </div>
+  
+        <!-- Reports Page -->
+        <div id="reports" class="page">
+          <h1>Reports</h1>
+          <p>Generate detailed reports of your income and expenses over time.</p>
+          <button class="btn btn-secondary">Generate Report</button>
+        </div>
+      </div>
     </div>
-
-    <!-- Buttons Section -->
-    <div class="mt-4 text-center">
-      <button id="view-summary" class="btn btn-secondary">View Summary</button>
-      <button id="visualize-data" class="btn btn-success">Visualize Data</button>
-    </div>
-
-    <!-- Chart Section -->
-    <canvas id="chart" width="400" height="200" style="display: none;" class="mt-4"></canvas>
-    <canvas id="pie-chart" width="400" height="200" style="display: none;" class="mt-4"></canvas>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="script.js"></script>
-</body>
-</html>
+  
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+  </body>
+  
